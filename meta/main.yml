@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Karol Ossowski
+  description: celery worker in supervisor for Django app
+
+  min_ansible_version: 1.6
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags: [ django, celery, debian, supervisor ]
+
+allow_duplicates: yes
+dependencies: [ django_supervisor ]

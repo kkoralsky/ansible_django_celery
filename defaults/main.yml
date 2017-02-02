@@ -1,0 +1,9 @@
+---
+program_name: '{{ app }}_celery_worker'
+priority: 9
+
+threads: '{{ansible_processor_vcpus}}'
+
+celery_loglevel: info
+celery_beat: no
+celery_queues: [default]
