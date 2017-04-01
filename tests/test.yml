@@ -1,0 +1,18 @@
+---
+- hosts: vagrant.local
+  vars:
+    app: dummy
+  pre_tasks:
+    - name: install rabbitmq
+      apt: name=rabbitmq-server
+      become: true
+  roles:
+    - role: django_app
+      django_packages:
+        - "python{{ py_package_suf }}"
+        - "python{{ py_package_suf }}-dev"
+        - "python{{ py_package_suf }}-virtualenv"
+        - git
+      django_commands: [migrate]
+      git_repo: https://github.com/xkoralsky/django-dummy-celery.git
+    - role: django_celery 
