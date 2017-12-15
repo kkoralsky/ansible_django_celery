@@ -3,6 +3,7 @@
   template:
     src: '{{ django_settings_tpl }}'
     dest: '{{ django_settings_path }}'
+  notify: reload app
   when: django_settings_tpl is defined
 
 - name: configure supervisor

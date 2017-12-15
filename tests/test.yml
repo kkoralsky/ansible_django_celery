@@ -14,5 +14,5 @@
         - "python{{ py_package_suf }}-virtualenv"
         - git
       django_commands: [migrate]
-      git_repo: https://github.com/xkoralsky/django-dummy-celery.git
+      git_repo: https://github.com/kkoralsky/django-dummy-celery.git
     - role: django_celery 
