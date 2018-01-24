@@ -25,7 +25,7 @@ Role Variables
 Dependencies
 ------------
 
-- https://github.com/ansible_django_supervisor
+- https://github.com/kkoralsky/ansible_django_supervisor
 
 Example Playbook
 ----------------
