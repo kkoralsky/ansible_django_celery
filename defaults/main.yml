@@ -1,9 +1,12 @@
 ---
-program_name: '{{ app }}_celery_worker'
+program_name: '{{ app }}_celery{% if celery_beat_only %}beat{% else %}_worker{% endif %}'
 priority: 9
 
 threads: '{{ansible_processor_vcpus}}'
 
 celery_loglevel: info
 celery_beat: no
-celery_queues: [default]
+celery_beat_only: no
+celery_queues: []
+
+supervisor_stopsignal: TERM
