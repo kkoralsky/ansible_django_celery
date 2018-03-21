@@ -3,4 +3,4 @@ celery_queues_args: "{% if celery_queues|length > 0 %}-Q {{ celery_queues|join('
 celery_app_args: "{% if celery_app is defined %}-A {{ celery_app }}{% endif %}"
 
 worker_command: celery worker -l {{ celery_loglevel }} {{ celery_app_args }} {{ celery_queues_args }} -c {{ threads }} {% if celery_beat %}-B{% endif %}
-beat_command: celerybeat -l {{ celery_loglevel }} -c {{ threads }}
+beat_command: celerybeat -l {{ celery_loglevel }}
