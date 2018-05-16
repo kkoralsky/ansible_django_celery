@@ -7,6 +7,9 @@ environment = DJANGO_SETTINGS_MODULE="{{ django_settings_module }}"
 autostart=true
 autorestart=true
 startretries=3
+stopasgroup={{ supervisor_stopasgroup }}
+killasgroup={{ supervisor_killasgroup }}
+stopwaitsecs={{ supervisor_stopwaitsecs }}
 stdout_logfile={{ log_path }}/{{ program_name }}-out.log
 stdout_logfile_maxbytes={{ supervisor_log_maxbytes }}
 stdout_logfile_backups={{ supervisor_log_backups }}
